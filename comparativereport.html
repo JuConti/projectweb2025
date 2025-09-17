@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comparative Report — Bootstrap · GSAP · Motion</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071029 0%, #071a2a 100%);color:#e6eef6;margin:0;padding:40px}
+    .wrap{max-width:980px;margin:0 auto}
+    header{display:flex;gap:20px;align-items:center}
+    header h1{margin:0;font-size:1.6rem}
+    .meta{color:var(--muted);font-size:0.9rem}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    table{width:100%;border-collapse:collapse;font-size:0.95rem}
+    th,td{padding:8px 10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    th{font-weight:600;color:#dfe9f6}
+    pre{background:#041022;padding:12px;border-radius:8px;overflow:auto;font-size:0.9rem}
+    .center{grid-column:1/-1}
+    footer{margin-top:22px;color:var(--muted);font-size:0.9rem}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:0.8rem;color:var(--muted)}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Comparative Report — Bootstrap · GSAP · Motion</h1>
+        <div class="meta">Activity: Explore frameworks, build a comparative HTML report (resources.html)</div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <h3>What I explored</h3>
+        <p class="meta">Links analysed:</p>
+        <ul>
+          <li><a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer">Bootstrap — getbootstrap.com</a></li>
+          <li><a href="https://gsap.com" target="_blank" rel="noopener noreferrer">GSAP (GreenSock) — gsap.com</a></li>
+          <li><a href="https://motion.dev" target="_blank" rel="noopener noreferrer">Motion — motion.dev</a></li>
+        </ul>
+        <div class="tags">
+          <span class="tag">responsive</span>
+          <span class="tag">ui-kit</span>
+          <span class="tag">animation</span>
+          <span class="tag">performance</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>Quick summary (1 line)</h3>
+        <p><strong>Bootstrap</strong> — robust UI toolkit for responsive layouts and components.<br>
+        <strong>GSAP</strong> — advanced, high-performance JS animation engine for complex animations.<br>
+        <strong>Motion</strong> — modern, small, and ergonomically-designed animation library (React-friendly).</p>
+      </article>
+
+      <article class="card center">
+        <h3>Side-by-side comparison</h3>
+        <table>
+          <thead>
+            <tr><th>Area</th><th>Bootstrap</th><th>GSAP</th><th>Motion</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Primary purpose</td><td>UI components + grid system (rapid layout & components)</td><td>General-purpose animation engine (tweens & timelines)</td><td>UI animations for React/JS/Vue (variants, exit/enter, scroll)</td></tr>
+            <tr><td>Weight</td><td>Moderate (CSS + JS components)</td><td>Small-to-moderate (core + optional plugins)</td><td>Very small (tiny core; Motion One micro-builds available)</td></tr>
+            <tr><td>Learning curve</td><td>Low — great docs and conventions</td><td>Medium — API is rich, concept of timelines/tweens to learn</td><td>Low-to-medium — ergonomic API, React primitives make it easier</td></tr>
+            <tr><td>Best for</td><td>Prototypes, admin UIs, consistent design systems</td><td>Micro-interactions, complex timelines, cross-browser animation</td><td>Fluid UI animations, page transitions, React component motion</td></tr>
+            <tr><td>Accessibility</td><td>Provides accessible components and patterns</td><td>Depends on developer to implement accessible motion</td><td>Has API features that fit well into accessible React apps</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card">
+        <h3>How to include (quick CDN examples)</h3>
+        <pre>&lt;!-- Bootstrap CSS (via CDN) --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/&gt;
+
+&lt;!-- GSAP (via CDN) --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Motion (Motion One) --&gt;
+&lt;script type="module" src="https://unpkg.com/@motionone/dom/dist/motion.es.js"&gt;&lt;/script&gt;
+</pre>
+        <p class="meta">(Use package managers for production builds and better caching.)</p>
+      </article>
+
+      <article class="card">
+        <h3>Code snippets — simple examples</h3>
+        <h4>Bootstrap card</h4>
+        <pre>&lt;div class="card" style="width:18rem;"&gt;
+  &lt;img src="/img.jpg" class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Quick example of Bootstrap components.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+        <h4>GSAP tween</h4>
+        <pre>&lt;script&gt;
+// fade an element in
+gsap.to('.logo', {duration:1.2, opacity:1, y:0});
+&lt;/script&gt;
+</pre>
+        <h4>Motion (Motion One) example</h4>
+        <pre>&lt;script type="module"&gt;
+import { animate } from 'https://unpkg.com/@motionone/dom/dist/motion.es.js'
+animate('.box', { opacity: [0,1], transform: ['translateY(20px)','translateY(0)'] }, { duration: 0.7 })
+&lt;/script&gt;
+</pre>
+      </article>
+
+      <article class="card">
+        <h3>Pros & Cons (practical)</h3>
+        <ul>
+          <li><strong>Bootstrap</strong>: + Rapid UI, consistent components, good accessibility basics; − opinionated style, can feel generic unless customised.</li>
+          <li><strong>GSAP</strong>: + Extremely powerful and cross-platform, perfect for complex sequences; − heavier conceptually, plugin model sometimes paid for advanced features.</li>
+          <li><strong>Motion</strong>: + Tiny, modern API, excellent for React components and transitions; − less focused on raw timeline control compared to GSAP.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>When to combine them</h3>
+        <p>Use Bootstrap for layout and ready components, then add GSAP or Motion for micro-interactions and richer transitions. For React projects, Motion integrates naturally; for highly bespoke animations or canvas/SVG sequences, GSAP shines.</p>
+      </article>
+
+      <article class="card center">
+        <h3>Personal reflection (Julia)</h3>
+        <p>I gravitate toward tools that help me craft a strong visual identity quickly. As a designer who also paints and has fashion experience, I like Bootstrap for fast, accessible layouts and consistent UI—it helps me prototype visual systems quickly. For expressive motion that echoes a brand or garment movement, GSAP is tempting because it gives fine-grained control over timing and easing. For React-driven portfolios (my current web projects), Motion is very attractive: it’s lightweight, component-friendly, and makes entrance/exit transitions elegant.</p>
+        <p class="meta">Summary: Prototype layouts with Bootstrap → add Motion for React interactions or GSAP for high-fidelity, bespoke animations.</p>
+      </article>
+
+    </section>
+
+    <footer>
+      <div>Notes: This file is intended to be committed as <code>resources.html</code> into the repo as requested by the assignment.</div>
+    </footer>
+  </div>
+</body>
+</html>
