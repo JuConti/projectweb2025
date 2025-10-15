@@ -1,142 +1,181 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Comparative Report — Bootstrap · GSAP · Motion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reference Resource — Tools & Runtime Classification</title>
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071029 0%, #071a2a 100%);color:#e6eef6;margin:0;padding:40px}
-    .wrap{max-width:980px;margin:0 auto}
-    header{display:flex;gap:20px;align-items:center}
-    header h1{margin:0;font-size:1.6rem}
-    .meta{color:var(--muted);font-size:0.9rem}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-    table{width:100%;border-collapse:collapse;font-size:0.95rem}
-    th,td{padding:8px 10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03)}
-    th{font-weight:600;color:#dfe9f6}
-    pre{background:#041022;padding:12px;border-radius:8px;overflow:auto;font-size:0.9rem}
-    .center{grid-column:1/-1}
-    footer{margin-top:22px;color:var(--muted);font-size:0.9rem}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:0.8rem;color:var(--muted)}
-    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+    :root{--bg:#0f172a;--card:#0b1220;--muted:#94a3b8;--accent:#fb923c;color-scheme:dark}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;background:linear-gradient(180deg,#071024 0%,#071833 100%);color:#e6eef8;margin:0;padding:32px}
+    header{max-width:1000px;margin:0 auto 24px}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 20px}
+    main{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(3,7,18,0.6)}
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .tool h3{margin:0 0 6px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .pros, .cons{margin:6px 0 0;padding-left:18px}
+    .reflection{white-space:pre-wrap}
+    footer{max-width:1000px;margin:18px auto;color:var(--muted);font-size:13px}
+    code.k{background:#071726;padding:3px 6px;border-radius:6px;font-weight:600}
+    .emoji{font-size:18px;margin-right:6px}
+    .usage{margin-top:8px;font-size:14px}
+    @media (max-width:640px){body{padding:18px}h1{font-size:22px}}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1>Comparative Report — Bootstrap · GSAP · Motion</h1>
-        <div class="meta">Activity: Explore frameworks, build a comparative HTML report (resources.html)</div>
+  <header>
+    <h1>Reference Resource — Tools & Runtime Classification</h1>
+    <p class="lead">An expanded guide and critical reflection on eight web tools across different runtime environments, exploring trade-offs, workflows, and their potential use in a designer’s portfolio.</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Selected tools (detailed analysis)</h2>
+      <div class="tools">
+        <!-- Tool 1: Tailwind -->
+        <article class="tool">
+          <h3>Tailwind CSS <span class="emoji">📦</span></h3>
+          <div class="meta">Category: Stylesheet / Utility-first framework — Runtime: <strong>Requires Node.js</strong></div>
+          <p>Tailwind CSS revolutionized the way modern designers and developers approach styling by promoting a utility-first methodology. Instead of pre-designed components, it provides low-level utility classes that allow you to build any design directly in your HTML. This eliminates the need to constantly switch between CSS and markup files, making the creative process more fluid and iterative.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Highly flexible, reduces context switching, excellent for rapid prototyping, supports dark mode and responsive design natively, integrates seamlessly with frameworks like React and Astro.</li>
+            <li><strong>Cons:</strong> Verbose class-heavy markup can be overwhelming; requires build step with PostCSS and Node.js; customization through configuration files may be confusing for beginners.</li>
+          </ul>
+          <div class="usage">Portfolio use: Perfect for crafting unique, responsive layouts that showcase visual hierarchy and brand identity while maintaining design consistency through utility patterns.</div>
+        </article>
+
+        <!-- Tool 2: Bootstrap -->
+        <article class="tool">
+          <h3>Bootstrap <span class="emoji">🌐</span></h3>
+          <div class="meta">Category: CSS framework — Runtime: <strong>No Node.js</strong></div>
+          <p>Bootstrap remains one of the most popular frameworks due to its simplicity and reliability. It provides a predefined set of styles, components, and responsive grid layouts. For designers who need to develop a working prototype or functional website quickly, Bootstrap’s CDN delivery offers immediate access without build tools.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Quick to implement, highly documented, broad browser support, strong focus on accessibility, and easy to use for beginners.</li>
+            <li><strong>Cons:</strong> Limited creative freedom without heavy customization; sites built with default Bootstrap often look similar.</li>
+          </ul>
+          <div class="usage">Portfolio use: Best suited for quick prototypes or accessible content pages that emphasize clarity over heavy customization.</div>
+        </article>
+
+        <!-- Tool 3: Material UI -->
+        <article class="tool">
+          <h3>Material UI (MUI) <span class="emoji">📦</span></h3>
+          <div class="meta">Category: UI component library for React — Runtime: <strong>Requires Node.js</strong></div>
+          <p>Material UI is a comprehensive React-based design system inspired by Google’s Material Design principles. It provides developers with production-ready components that follow accessibility and interaction standards, while still being customizable through themes and design tokens.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Large ecosystem, responsive components, consistent interaction patterns, strong accessibility compliance, and custom theming options.</li>
+            <li><strong>Cons:</strong> Can lead to a uniform aesthetic if not customized; requires a full React + Node.js environment, adding setup complexity.</li>
+          </ul>
+          <div class="usage">Portfolio use: Ideal for showcasing design systems or interactive interfaces where structure, usability, and visual hierarchy are crucial.</div>
+        </article>
+
+        <!-- Tool 4: Hugo -->
+        <article class="tool">
+          <h3>Hugo <span class="emoji">🟢</span></h3>
+          <div class="meta">Category: Static Site Generator — Runtime: <strong>Standalone binary (No Node.js)</strong></div>
+          <p>Hugo is known for its exceptional build speed, generating entire static websites in seconds. It’s written in Go and doesn’t require Node.js or Ruby, making it lightweight and easy to maintain. Its use of Markdown and Go templates encourages simplicity and performance.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Ultra-fast builds, no external dependencies, easy deployment on any server, and built-in support for taxonomies and multilingual sites.</li>
+            <li><strong>Cons:</strong> Go templates can feel restrictive; lacks dynamic interactivity unless integrated with JavaScript frameworks.</li>
+          </ul>
+          <div class="usage">Portfolio use: Excellent for building fast, content-driven portfolios or blogs that require stability, speed, and minimal configuration.</div>
+        </article>
+
+        <!-- Tool 5: Jekyll -->
+        <article class="tool">
+          <h3>Jekyll <span class="emoji">🟥</span></h3>
+          <div class="meta">Category: Static Site Generator — Runtime: <strong>Requires Ruby (No Node.js)</strong></div>
+          <p>Jekyll is the original static site generator and the engine behind GitHub Pages. It uses Markdown and Liquid templates to transform plain text into static websites. While older than newer generators, its simplicity and native GitHub integration remain strong advantages for documentation and personal sites.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Straightforward workflow for text-heavy content, automatic GitHub Pages support, and stable community.</li>
+            <li><strong>Cons:</strong> Requires Ruby environment setup; slower builds than Go- or Node-based generators.</li>
+          </ul>
+          <div class="usage">Portfolio use: Best for static project showcases or long-form case studies hosted directly on GitHub.</div>
+        </article>
+
+        <!-- Tool 6: GSAP -->
+        <article class="tool">
+          <h3>GSAP <span class="emoji">🌐</span></h3>
+          <div class="meta">Category: Animation library — Runtime: <strong>No Node.js</strong></div>
+          <p>GSAP (GreenSock Animation Platform) is an advanced animation library capable of controlling animations with precision and fluidity. It’s used extensively in high-end interactive websites and portfolios to achieve dynamic storytelling and motion effects beyond standard CSS transitions.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Extremely smooth performance, timeline synchronization, and complex animation sequencing.</li>
+            <li><strong>Cons:</strong> Steeper learning curve, larger file size compared to CSS animations, and paid plugins for some advanced effects.</li>
+          </ul>
+          <div class="usage">Portfolio use: Perfect for adding motion storytelling and transitions that emphasize creativity and artistic direction.</div>
+        </article>
+
+        <!-- Tool 7: Astro -->
+        <article class="tool">
+          <h3>Astro <span class="emoji">📦</span></h3>
+          <div class="meta">Category: Static site framework (islands architecture) — Runtime: <strong>Requires Node.js</strong></div>
+          <p>Astro is a new-generation framework designed for performance and modularity. It combines static site generation with the ability to integrate components from multiple frameworks (React, Vue, Svelte) as isolated islands of interactivity. This approach minimizes JavaScript shipped to the browser, resulting in fast-loading pages.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Highly performant, modern developer experience, supports multiple frameworks, flexible architecture for mixed content and interactivity.</li>
+            <li><strong>Cons:</strong> Requires Node.js; still evolving, so documentation and community examples can be inconsistent.</li>
+          </ul>
+          <div class="usage">Portfolio use: Combines storytelling and technical interactivity — ideal for hybrid sites that need both static performance and dynamic showcases.</div>
+        </article>
+
+        <!-- Tool 8: Hygraph -->
+        <article class="tool">
+          <h3>Hygraph (Headless CMS) <span class="emoji">☁</span></h3>
+          <div class="meta">Category: Data / CMS — Runtime: <strong>SaaS (cloud service)</strong></div>
+          <p>Hygraph (formerly GraphCMS) is a cloud-based headless CMS that lets you structure and manage content using GraphQL. Instead of a traditional monolithic CMS, it separates content management from the frontend, allowing designers and developers to work independently while maintaining consistency across platforms.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Streamlined content workflows, collaborative editing, integrates with any static or dynamic frontend, API-first approach.</li>
+            <li><strong>Cons:</strong> Internet dependency for updates, limited offline editing, premium features locked behind paywalls.</li>
+          </ul>
+          <div class="usage">Portfolio use: Manage written content, case studies, and project metadata from a single dashboard; integrate with Hugo or Astro for automated builds.</div>
+        </article>
       </div>
-    </header>
-
-    <section class="grid">
-      <article class="card">
-        <h3>What I explored</h3>
-        <p class="meta">Links analysed:</p>
-        <ul>
-          <li><a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer">Bootstrap — getbootstrap.com</a></li>
-          <li><a href="https://gsap.com" target="_blank" rel="noopener noreferrer">GSAP (GreenSock) — gsap.com</a></li>
-          <li><a href="https://motion.dev" target="_blank" rel="noopener noreferrer">Motion — motion.dev</a></li>
-        </ul>
-        <div class="tags">
-          <span class="tag">responsive</span>
-          <span class="tag">ui-kit</span>
-          <span class="tag">animation</span>
-          <span class="tag">performance</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>Quick summary (1 line)</h3>
-        <p><strong>Bootstrap</strong> — robust UI toolkit for responsive layouts and components.<br>
-        <strong>GSAP</strong> — advanced, high-performance JS animation engine for complex animations.<br>
-        <strong>Motion</strong> — modern, small, and ergonomically-designed animation library (React-friendly).</p>
-      </article>
-
-      <article class="card center">
-        <h3>Side-by-side comparison</h3>
-        <table>
-          <thead>
-            <tr><th>Area</th><th>Bootstrap</th><th>GSAP</th><th>Motion</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Primary purpose</td><td>UI components + grid system (rapid layout & components)</td><td>General-purpose animation engine (tweens & timelines)</td><td>UI animations for React/JS/Vue (variants, exit/enter, scroll)</td></tr>
-            <tr><td>Weight</td><td>Moderate (CSS + JS components)</td><td>Small-to-moderate (core + optional plugins)</td><td>Very small (tiny core; Motion One micro-builds available)</td></tr>
-            <tr><td>Learning curve</td><td>Low — great docs and conventions</td><td>Medium — API is rich, concept of timelines/tweens to learn</td><td>Low-to-medium — ergonomic API, React primitives make it easier</td></tr>
-            <tr><td>Best for</td><td>Prototypes, admin UIs, consistent design systems</td><td>Micro-interactions, complex timelines, cross-browser animation</td><td>Fluid UI animations, page transitions, React component motion</td></tr>
-            <tr><td>Accessibility</td><td>Provides accessible components and patterns</td><td>Depends on developer to implement accessible motion</td><td>Has API features that fit well into accessible React apps</td></tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article class="card">
-        <h3>How to include (quick CDN examples)</h3>
-        <pre>&lt;!-- Bootstrap CSS (via CDN) --&gt;
-&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/&gt;
-
-&lt;!-- GSAP (via CDN) --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"&gt;&lt;/script&gt;
-
-&lt;!-- Motion (Motion One) --&gt;
-&lt;script type="module" src="https://unpkg.com/@motionone/dom/dist/motion.es.js"&gt;&lt;/script&gt;
-</pre>
-        <p class="meta">(Use package managers for production builds and better caching.)</p>
-      </article>
-
-      <article class="card">
-        <h3>Code snippets — simple examples</h3>
-        <h4>Bootstrap card</h4>
-        <pre>&lt;div class="card" style="width:18rem;"&gt;
-  &lt;img src="/img.jpg" class="card-img-top" alt="..."&gt;
-  &lt;div class="card-body"&gt;
-    &lt;h5 class="card-title"&gt;Card title&lt;/h5&gt;
-    &lt;p class="card-text"&gt;Quick example of Bootstrap components.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</pre>
-        <h4>GSAP tween</h4>
-        <pre>&lt;script&gt;
-// fade an element in
-gsap.to('.logo', {duration:1.2, opacity:1, y:0});
-&lt;/script&gt;
-</pre>
-        <h4>Motion (Motion One) example</h4>
-        <pre>&lt;script type="module"&gt;
-import { animate } from 'https://unpkg.com/@motionone/dom/dist/motion.es.js'
-animate('.box', { opacity: [0,1], transform: ['translateY(20px)','translateY(0)'] }, { duration: 0.7 })
-&lt;/script&gt;
-</pre>
-      </article>
-
-      <article class="card">
-        <h3>Pros & Cons (practical)</h3>
-        <ul>
-          <li><strong>Bootstrap</strong>: + Rapid UI, consistent components, good accessibility basics; − opinionated style, can feel generic unless customised.</li>
-          <li><strong>GSAP</strong>: + Extremely powerful and cross-platform, perfect for complex sequences; − heavier conceptually, plugin model sometimes paid for advanced features.</li>
-          <li><strong>Motion</strong>: + Tiny, modern API, excellent for React components and transitions; − less focused on raw timeline control compared to GSAP.</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>When to combine them</h3>
-        <p>Use Bootstrap for layout and ready components, then add GSAP or Motion for micro-interactions and richer transitions. For React projects, Motion integrates naturally; for highly bespoke animations or canvas/SVG sequences, GSAP shines.</p>
-      </article>
-
-      <article class="card center">
-        <h3>Personal reflection</h3>
-        <p>I gravitate toward tools that help me craft a strong visual identity quickly. As a designer who also paints and has fashion experience, I like Bootstrap for fast, accessible layouts and consistent UI—it helps me prototype visual systems quickly. For expressive motion that echoes a brand or garment movement, GSAP is tempting because it gives fine-grained control over timing and easing. For React-driven portfolios (my current web projects), Motion is very attractive: it’s lightweight, component-friendly, and makes entrance/exit transitions elegant.</p>
-        <p class="meta">Summary: Prototype layouts with Bootstrap → add Motion for React interactions or GSAP for high-fidelity, bespoke animations.</p>
-      </article>
-
     </section>
 
-    <footer>
-      <div>Notes: This file is intended to be committed as <code>resources.html</code> into the repo as requested by the assignment.</div>
-    </footer>
-  </div>
+    <section class="card">
+      <h2>Critical reflection</h2>
+      <div class="reflection">
+<strong>Which tools fit my workflow?</strong>
+As a designer with a visual-first and experimental approach, I naturally gravitate toward tools that offer flexibility and control over visual expression, such as Tailwind CSS for style composition and Astro for content-driven, hybrid experiences. These tools balance creativity and performance. Hugo also fits well when I prioritize simplicity and speed without needing Node.js. For content management, Hygraph provides structure without compromising visual autonomy.
+
+<strong>Trade-offs observed:</strong>
+- <em>Speed vs Flexibility:</em> Hugo and Jekyll provide simplicity and lightning-fast builds but limit the creative freedom offered by component-based frameworks. Astro and Tailwind enable unique, custom layouts and rich interactivity but require build pipelines and time investment.
+- <em>Dependencies vs Simplicity:</em> Node.js environments (Tailwind, Astro, MUI) enhance developer experience with plugins and modern tooling but introduce dependency management overhead. In contrast, CDN-based tools (Bootstrap, GSAP) offer simplicity and low friction but are harder to scale when custom logic is needed.
+- <em>Node.js vs Standalone:</em> Standalone generators like Hugo are self-contained and predictable. Node.js ecosystems are more versatile but evolve quickly, requiring frequent maintenance.
+- <em>Creativity vs Convention:</em> Using tools like Tailwind or Astro fosters experimentation and visual differentiation, whereas conventional tools like Bootstrap or Jekyll emphasize reliability and convention, suitable for accessibility and uniform design.
+
+<strong>How I would use these tools in my portfolio:</strong>
+- Combine **Astro** + **Tailwind** for a modular portfolio showcasing responsive design and coding adaptability.
+- Use **Hugo** for a content-focused, minimalist sub-site emphasizing typography and writing.
+- Integrate **Hygraph** for dynamic content updates, enabling non-technical editors or collaborators to add new work.
+- Use **GSAP** to animate transitions between case studies and create a sense of narrative flow.
+- Apply **Material UI** selectively for UI-driven projects to demonstrate component-based design systems.
+
+<strong>Extended reflection:</strong>
+Building a creative portfolio is not just about aesthetics but about communicating process, logic, and adaptability. The tools I’ve chosen reflect different stages of creative production, from experimentation (Tailwind + Astro) to refinement and presentation (Hugo + Hygraph). Each tool highlights a different dimension of my identity as a designer: technical curiosity, efficiency, accessibility awareness, and conceptual depth. Balancing simplicity and innovation is key — sometimes the best solution is not the most modern one, but the one that aligns with the story being told.
+
+Ultimately, tool choice defines not only workflow but also mindset: whether to optimize for speed or expression, for convention or risk. Recognizing when each approach is appropriate transforms technology into a medium for storytelling, rather than just a technical requirement.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Appendix: quick comparison table</h2>
+      <table style="width:100%;border-collapse:collapse;color:#cfe8ff">
+        <thead style="text-align:left;color:var(--muted)"><tr><th style="padding:8px">Tool</th><th>Runtime</th><th>Category</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:8px">Tailwind</td><td style="padding:8px">📦 Node.js</td><td style="padding:8px">CSS framework</td><td style="padding:8px">Rapid prototyping, design systems</td></tr>
+          <tr><td style="padding:8px">Bootstrap</td><td style="padding:8px">🌐 No Node.js</td><td style="padding:8px">CSS framework</td><td style="padding:8px">MVPs, forms, grid layout</td></tr>
+          <tr><td style="padding:8px">Material UI</td><td style="padding:8px">📦 Node.js</td><td style="padding:8px">React UI</td><td style="padding:8px">Interactive React demos</td></tr>
+          <tr><td style="padding:8px">Hugo</td><td style="padding:8px">🟢 Standalone</td><td style="padding:8px">SSG</td><td style="padding:8px">Fast static portfolio</td></tr>
+          <tr><td style="padding:8px">Jekyll</td><td style="padding:8px">🟥 Ruby</td><td style="padding:8px">SSG</td><td style="padding:8px">GitHub Pages, content sites</td></tr>
+          <tr><td style="padding:8px">GSAP</td><td style="padding:8px">🌐 No Node.js</td><td style="padding:8px">Animation</td><td style="padding:8px">Advanced animations</td></tr>
+          <tr><td style="padding:8px">Astro</td><td style="padding:8px">📦 Node.js</td><td style="padding:8px">SSG / Framework</td><td style="padding:8px">Content-first + interactive islands</td></tr>
+          <tr><td style="padding:8px">Hygraph</td><td style="padding:8px">☁ SaaS</td><td style="padding:8px">Headless CMS</td><td style="padding:8px">Decoupled content management</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer>
+    <p>Created as a university reference resource — expanded edition. /resources/index.html</p>
+  </footer>
 </body>
 </html>
