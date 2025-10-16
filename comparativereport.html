@@ -1,181 +1,253 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Reference Resource — Tools & Runtime Classification</title>
-  <style>
-    :root{--bg:#0f172a;--card:#0b1220;--muted:#94a3b8;--accent:#fb923c;color-scheme:dark}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;background:linear-gradient(180deg,#071024 0%,#071833 100%);color:#e6eef8;margin:0;padding:32px}
-    header{max-width:1000px;margin:0 auto 24px}
-    h1{font-size:28px;margin:0 0 8px}
-    p.lead{color:var(--muted);margin:0 0 20px}
-    main{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:18px}
-    .card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(3,7,18,0.6)}
-    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
-    .tool h3{margin:0 0 6px}
-    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
-    .pros, .cons{margin:6px 0 0;padding-left:18px}
-    .reflection{white-space:pre-wrap}
-    footer{max-width:1000px;margin:18px auto;color:var(--muted);font-size:13px}
-    code.k{background:#071726;padding:3px 6px;border-radius:6px;font-weight:600}
-    .emoji{font-size:18px;margin-right:6px}
-    .usage{margin-top:8px;font-size:14px}
-    @media (max-width:640px){body{padding:18px}h1{font-size:22px}}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resources — Tool Research & Classification</title>
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/resources.css" />
 </head>
 <body>
-  <header>
-    <h1>Reference Resource — Tools & Runtime Classification</h1>
-    <p class="lead">An expanded guide and critical reflection on eight web tools across different runtime environments, exploring trade-offs, workflows, and their potential use in a designer’s portfolio.</p>
+  <header class="site-header">
+    <div class="container">
+      <h1>Julia Conti — Tool Research & Classification</h1>
+      <p class="meta">Graphic Design student · Madrid · Portfolio tools analysis</p>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#tools">Tools</a>
+        <a href="#notes">Personal Notes</a>
+        <a href="#reflection">Critical Reflection (ATELIER)</a>
+        <a href="#checklist">Deliverable Checklist</a>
+      </nav>
+    </div>
   </header>
-  <main>
-    <section class="card">
-      <h2>Selected tools (detailed analysis)</h2>
-      <div class="tools">
-        <!-- Tool 1: Tailwind -->
-        <article class="tool">
-          <h3>Tailwind CSS <span class="emoji"></span></h3>
-          <div class="meta">Category: Stylesheet / Utility-first framework — Runtime: <strong>Requires Node.js</strong></div>
-          <p>Tailwind CSS revolutionized the way modern designers and developers approach styling by promoting a utility-first methodology. Instead of pre-designed components, it provides low-level utility classes that allow you to build any design directly in your HTML. This eliminates the need to constantly switch between CSS and markup files, making the creative process more fluid and iterative.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Highly flexible, reduces context switching, excellent for rapid prototyping, supports dark mode and responsive design natively, integrates seamlessly with frameworks like React and Astro.</li>
-            <li><strong>Cons:</strong> Verbose class-heavy markup can be overwhelming; requires build step with PostCSS and Node.js; customization through configuration files may be confusing for beginners.</li>
-          </ul>
-          <div class="usage">Portfolio use: Perfect for crafting unique, responsive layouts that showcase visual hierarchy and brand identity while maintaining design consistency through utility patterns.</div>
-        </article>
 
-        <!-- Tool 2: Bootstrap -->
-        <article class="tool">
-          <h3>Bootstrap <span class="emoji"></span></h3>
-          <div class="meta">Category: CSS framework — Runtime: <strong>No Node.js</strong></div>
-          <p>Bootstrap remains one of the most popular frameworks due to its simplicity and reliability. It provides a predefined set of styles, components, and responsive grid layouts. For designers who need to develop a working prototype or functional website quickly, Bootstrap’s CDN delivery offers immediate access without build tools.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Quick to implement, highly documented, broad browser support, strong focus on accessibility, and easy to use for beginners.</li>
-            <li><strong>Cons:</strong> Limited creative freedom without heavy customization; sites built with default Bootstrap often look similar.</li>
-          </ul>
-          <div class="usage">Portfolio use: Best suited for quick prototypes or accessible content pages that emphasize clarity over heavy customization.</div>
-        </article>
-
-        <!-- Tool 3: Material UI -->
-        <article class="tool">
-          <h3>Material UI (MUI) <span class="emoji"></span></h3>
-          <div class="meta">Category: UI component library for React — Runtime: <strong>Requires Node.js</strong></div>
-          <p>Material UI is a comprehensive React-based design system inspired by Google’s Material Design principles. It provides developers with production-ready components that follow accessibility and interaction standards, while still being customizable through themes and design tokens.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Large ecosystem, responsive components, consistent interaction patterns, strong accessibility compliance, and custom theming options.</li>
-            <li><strong>Cons:</strong> Can lead to a uniform aesthetic if not customized; requires a full React + Node.js environment, adding setup complexity.</li>
-          </ul>
-          <div class="usage">Portfolio use: Ideal for showcasing design systems or interactive interfaces where structure, usability, and visual hierarchy are crucial.</div>
-        </article>
-
-        <!-- Tool 4: Hugo -->
-        <article class="tool">
-          <h3>Hugo <span class="emoji"></span></h3>
-          <div class="meta">Category: Static Site Generator — Runtime: <strong>Standalone binary (No Node.js)</strong></div>
-          <p>Hugo is known for its exceptional build speed, generating entire static websites in seconds. It’s written in Go and doesn’t require Node.js or Ruby, making it lightweight and easy to maintain. Its use of Markdown and Go templates encourages simplicity and performance.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Ultra-fast builds, no external dependencies, easy deployment on any server, and built-in support for taxonomies and multilingual sites.</li>
-            <li><strong>Cons:</strong> Go templates can feel restrictive; lacks dynamic interactivity unless integrated with JavaScript frameworks.</li>
-          </ul>
-          <div class="usage">Portfolio use: Excellent for building fast, content-driven portfolios or blogs that require stability, speed, and minimal configuration.</div>
-        </article>
-
-        <!-- Tool 5: Jekyll -->
-        <article class="tool">
-          <h3>Jekyll <span class="emoji"></span></h3>
-          <div class="meta">Category: Static Site Generator — Runtime: <strong>Requires Ruby (No Node.js)</strong></div>
-          <p>Jekyll is the original static site generator and the engine behind GitHub Pages. It uses Markdown and Liquid templates to transform plain text into static websites. While older than newer generators, its simplicity and native GitHub integration remain strong advantages for documentation and personal sites.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Straightforward workflow for text-heavy content, automatic GitHub Pages support, and stable community.</li>
-            <li><strong>Cons:</strong> Requires Ruby environment setup; slower builds than Go- or Node-based generators.</li>
-          </ul>
-          <div class="usage">Portfolio use: Best for static project showcases or long-form case studies hosted directly on GitHub.</div>
-        </article>
-
-        <!-- Tool 6: GSAP -->
-        <article class="tool">
-          <h3>GSAP <span class="emoji"></span></h3>
-          <div class="meta">Category: Animation library — Runtime: <strong>No Node.js</strong></div>
-          <p>GSAP (GreenSock Animation Platform) is an advanced animation library capable of controlling animations with precision and fluidity. It’s used extensively in high-end interactive websites and portfolios to achieve dynamic storytelling and motion effects beyond standard CSS transitions.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Extremely smooth performance, timeline synchronization, and complex animation sequencing.</li>
-            <li><strong>Cons:</strong> Steeper learning curve, larger file size compared to CSS animations, and paid plugins for some advanced effects.</li>
-          </ul>
-          <div class="usage">Portfolio use: Perfect for adding motion storytelling and transitions that emphasize creativity and artistic direction.</div>
-        </article>
-
-        <!-- Tool 7: Astro -->
-        <article class="tool">
-          <h3>Astro <span class="emoji"></span></h3>
-          <div class="meta">Category: Static site framework (islands architecture) — Runtime: <strong>Requires Node.js</strong></div>
-          <p>Astro is a new-generation framework designed for performance and modularity. It combines static site generation with the ability to integrate components from multiple frameworks (React, Vue, Svelte) as isolated islands of interactivity. This approach minimizes JavaScript shipped to the browser, resulting in fast-loading pages.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Highly performant, modern developer experience, supports multiple frameworks, flexible architecture for mixed content and interactivity.</li>
-            <li><strong>Cons:</strong> Requires Node.js; still evolving, so documentation and community examples can be inconsistent.</li>
-          </ul>
-          <div class="usage">Portfolio use: Combines storytelling and technical interactivity — ideal for hybrid sites that need both static performance and dynamic showcases.</div>
-        </article>
-
-        <!-- Tool 8: Hygraph -->
-        <article class="tool">
-          <h3>Hygraph (Headless CMS) <span class="emoji">☁</span></h3>
-          <div class="meta">Category: Data / CMS — Runtime: <strong>SaaS (cloud service)</strong></div>
-          <p>Hygraph (formerly GraphCMS) is a cloud-based headless CMS that lets you structure and manage content using GraphQL. Instead of a traditional monolithic CMS, it separates content management from the frontend, allowing designers and developers to work independently while maintaining consistency across platforms.</p>
-          <ul class="pros">
-            <li><strong>Pros:</strong> Streamlined content workflows, collaborative editing, integrates with any static or dynamic frontend, API-first approach.</li>
-            <li><strong>Cons:</strong> Internet dependency for updates, limited offline editing, premium features locked behind paywalls.</li>
-          </ul>
-          <div class="usage">Portfolio use: Manage written content, case studies, and project metadata from a single dashboard; integrate with Hugo or Astro for automated builds.</div>
-        </article>
-      </div>
+  <main class="container">
+    <section id="intro">
+      <h2>Exercise: Research and Classification</h2>
+      <p>This page documents 8 tools from different categories, classified by runtime requirements and annotated with personal notes and a critical reflection based on the ATELIER prompts.</p>
     </section>
 
-    <section class="card">
-      <h2>Critical reflection</h2>
-      <div class="reflection">
-<strong>Which tools fit my workflow?</strong>
-As a designer with a visual-first and experimental approach, I naturally gravitate toward tools that offer flexibility and control over visual expression, such as Tailwind CSS for style composition and Astro for content-driven, hybrid experiences. These tools balance creativity and performance. Hugo also fits well when I prioritize simplicity and speed without needing Node.js. For content management, Hygraph provides structure without compromising visual autonomy.
+    <section id="tools" aria-labelledby="tools-heading">
+      <h2 id="tools-heading">Tool Grid</h2>
 
-<strong>Trade-offs observed:</strong>
-- <em>Speed vs Flexibility:</em> Hugo and Jekyll provide simplicity and lightning-fast builds but limit the creative freedom offered by component-based frameworks. Astro and Tailwind enable unique, custom layouts and rich interactivity but require build pipelines and time investment.
-- <em>Dependencies vs Simplicity:</em> Node.js environments (Tailwind, Astro, MUI) enhance developer experience with plugins and modern tooling but introduce dependency management overhead. In contrast, CDN-based tools (Bootstrap, GSAP) offer simplicity and low friction but are harder to scale when custom logic is needed.
-- <em>Node.js vs Standalone:</em> Standalone generators like Hugo are self-contained and predictable. Node.js ecosystems are more versatile but evolve quickly, requiring frequent maintenance.
-- <em>Creativity vs Convention:</em> Using tools like Tailwind or Astro fosters experimentation and visual differentiation, whereas conventional tools like Bootstrap or Jekyll emphasize reliability and convention, suitable for accessibility and uniform design.
+      <p class="hint">Legend: <span class="badge node">Node.js</span> <span class="badge no-node">No Node.js</span> <span class="badge ruby">Ruby</span> <span class="badge standalone">Standalone</span> <span class="badge saas">SaaS</span></p>
 
-<strong>How I would use these tools in my portfolio:</strong>
-- Combine **Astro** + **Tailwind** for a modular portfolio showcasing responsive design and coding adaptability.
-- Use **Hugo** for a content-focused, minimalist sub-site emphasizing typography and writing.
-- Integrate **Hygraph** for dynamic content updates, enabling non-technical editors or collaborators to add new work.
-- Use **GSAP** to animate transitions between case studies and create a sense of narrative flow.
-- Apply **Material UI** selectively for UI-driven projects to demonstrate component-based design systems.
+      <ul class="tool-grid" role="list">
+        <!-- Tool card: Tailwind -->
+        <li class="tool-card" id="tailwind">
+          <h3>Tailwind CSS</h3>
+          <div class="badges">
+            <span class="badge node" title="Requires Node.js">Node.js</span>
+          </div>
+          <img src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.36.55.png?updatedAt=1760632684427" alt="Tailwind CSS website screenshot" class="tool-img" />
+          <p class="category">Category: Stylesheets / Utility-first CSS</p>
+          <p class="desc">A utility-first CSS framework that encourages composing utility classes to build designs rapidly.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Fast for prototyping when using PostCSS and build step. Requires Node.js for the typical toolchain (jit, purge). Great for responsive work; slightly verbose HTML but highly productive.</p>
+          </details>
+        </li>
 
-<strong>Extended reflection:</strong>
-Building a creative portfolio is not just about aesthetics but about communicating process, logic, and adaptability. The tools I’ve chosen reflect different stages of creative production, from experimentation (Tailwind + Astro) to refinement and presentation (Hugo + Hygraph). Each tool highlights a different dimension of my identity as a designer: technical curiosity, efficiency, accessibility awareness, and conceptual depth. Balancing simplicity and innovation is key — sometimes the best solution is not the most modern one, but the one that aligns with the story being told.
+        <!-- Bootstrap -->
+        <li class="tool-card" id="bootstrap">
+          <h3>Bootstrap</h3>
+          <div class="badges">
+            <span class="badge no-node" title="Works without Node.js">No Node.js</span>
+          </div>
+          <img src="../images/bootstrap.png" alt="Bootstrap website screenshot" class="tool-img" />
+          <p class="category">Category: Stylesheets / CSS Framework</p>
+          <p class="desc">Popular component-based CSS framework with ready UI patterns and grid system.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Good for quick mockups (via CDN). Less flexible than utility-first approaches but simpler dependency management — no local build necessary.</p>
+          </details>
+        </li>
 
-Ultimately, tool choice defines not only workflow but also mindset: whether to optimize for speed or expression, for convention or risk. Recognizing when each approach is appropriate transforms technology into a medium for storytelling, rather than just a technical requirement.
-      </div>
+        <!-- Jekyll -->
+        <li class="tool-card" id="jekyll">
+          <h3>Jekyll</h3>
+          <div class="badges">
+            <span class="badge ruby" title="Requires Ruby">Ruby</span>
+          </div>
+          <img src="../images/jekyll.png" alt="Jekyll website screenshot" class="tool-img" />
+          <p class="category">Category: Static Site Generator</p>
+          <p class="desc">A Ruby-based static site generator (used by GitHub Pages historically).</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Easy to deploy via GitHub Pages (legacy). I avoid adding Ruby to my machine unless necessary — it adds complexity but is stable and simple for Markdown-driven content.</p>
+          </details>
+        </li>
+
+        <!-- Hugo -->
+        <li class="tool-card" id="hugo">
+          <h3>Hugo</h3>
+          <div class="badges">
+            <span class="badge standalone" title="Standalone binary">Standalone</span>
+          </div>
+          <img src="../images/hugo.png" alt="Hugo website screenshot" class="tool-img" />
+          <p class="category">Category: Static Site Generator</p>
+          <p class="desc">A fast static site generator distributed as a single binary (Go-based).</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Super fast local builds and minimal dependencies. Nice for large content sites; templates are Go-based which has a learning curve but is dependable for performance.</p>
+          </details>
+        </li>
+
+        <!-- Material UI -->
+        <li class="tool-card" id="material-ui">
+          <h3>Material UI (MUI)</h3>
+          <div class="badges">
+            <span class="badge node" title="Requires Node.js">Node.js</span>
+          </div>
+          <img src="../images/mui.png" alt="Material UI website screenshot" class="tool-img" />
+          <p class="category">Category: Component library / UI kit (React)</p>
+          <p class="desc">A React UI library implementing Material Design components; used in modern web apps.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Excellent for React-based portfolios or dashboards. Adds Node dependency and bundler, but provides polished, accessible components.</p>
+          </details>
+        </li>
+
+        <!-- Shadcn UI -->
+        <li class="tool-card" id="shadcn">
+          <h3>shadcn/ui</h3>
+          <div class="badges">
+            <span class="badge node" title="Requires Node.js">Node.js</span>
+          </div>
+          <img src="../images/shadcn.png" alt="Shadcn UI website screenshot" class="tool-img" />
+          <p class="category">Category: Component Library (Radix + Tailwind)</p>
+          <p class="desc">A collection of accessible components built on Radix, styled with Tailwind; intended for React + Next.js.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Great for consistent design systems; assumes Node.js and Tailwind. High flexibility but heavier setup than CDN-based approaches.</p>
+          </details>
+        </li>
+
+        <!-- Eleventy -->
+        <li class="tool-card" id="eleventy">
+          <h3>Eleventy (11ty)</h3>
+          <div class="badges">
+            <span class="badge node" title="Requires Node.js">Node.js</span>
+          </div>
+          <img src="../images/eleventy.png" alt="Eleventy website screenshot" class="tool-img" />
+          <p class="category">Category: Static Site Generator</p>
+          <p class="desc">A simpler Node.js-based static site generator focusing on simplicity and flexibility.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>My favourite when I want templating flexibility without a heavy JS framework. Requires Node but you can keep the setup light.</p>
+          </details>
+        </li>
+
+        <!-- GSAP -->
+        <li class="tool-card" id="gsap">
+          <h3>GSAP</h3>
+          <div class="badges">
+            <span class="badge no-node" title="Works without Node.js">No Node.js</span>
+          </div>
+          <img src="../images/gsap.png" alt="GSAP website screenshot" class="tool-img" />
+          <p class="category">Category: Animation / Visual Libraries</p>
+          <p class="desc">GreenSock Animation Platform — powerful JS animation library used in production sites.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Works via CDN and integrates with vanilla JS. Ideal for portfolio interactions where a build step is unwanted.</p>
+          </details>
+        </li>
+
+        <!-- Framer Motion -->
+        <li class="tool-card" id="framer-motion">
+          <h3>Framer Motion</h3>
+          <div class="badges">
+            <span class="badge node" title="Requires Node.js">Node.js</span>
+          </div>
+          <img src="../images/framer-motion.png" alt="Framer Motion website screenshot" class="tool-img" />
+          <p class="category">Category: Animation / React</p>
+          <p class="desc">Animation library designed for React apps — smooth declarative animations for components.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Perfect for React-based portfolios. Node.js required, but yields highly polished micro-interactions.</p>
+          </details>
+        </li>
+
+        <!-- ImageKit.io -->
+        <li class="tool-card" id="imagekit">
+          <h3>ImageKit.io</h3>
+          <div class="badges">
+            <span class="badge saas" title="SaaS service">SaaS</span>
+          </div>
+          <img src="../images/imagekit.png" alt="ImageKit website screenshot" class="tool-img" />
+          <p class="category">Category: Data & Media / CDN</p>
+          <p class="desc">A hosted image CDN & optimization service that resizes and serves images globally.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>SaaS — no local install. Great to speed up image delivery in portfolios and reduce build-time image processing.</p>
+          </details>
+        </li>
+
+        <!-- Hygraph -->
+        <li class="tool-card" id="hygraph">
+          <h3>Hygraph</h3>
+          <div class="badges">
+            <span class="badge saas" title="SaaS service">SaaS</span>
+          </div>
+          <img src="../images/hygraph.png" alt="Hygraph website screenshot" class="tool-img" />
+          <p class="category">Category: Headless CMS / Data</p>
+          <p class="desc">Cloud-based GraphQL CMS for structured content and media.</p>
+          <details>
+            <summary>Personal notes</summary>
+            <p>Useful for content-driven portfolios that need a CMS without maintaining backend infra. Adds external dependency but simplifies content updates.</p>
+          </details>
+        </li>
+
+      </ul>
     </section>
 
-    <section class="card">
-      <h2>Appendix: quick comparison table</h2>
-      <table style="width:100%;border-collapse:collapse;color:#cfe8ff">
-        <thead style="text-align:left;color:var(--muted)"><tr><th style="padding:8px">Tool</th><th>Runtime</th><th>Category</th><th>Best for</th></tr></thead>
-        <tbody>
-          <tr><td style="padding:8px">Tailwind</td><td style="padding:8px">Node.js</td><td style="padding:8px">CSS framework</td><td style="padding:8px">Rapid prototyping, design systems</td></tr>
-          <tr><td style="padding:8px">Bootstrap</td><td style="padding:8px">No Node.js</td><td style="padding:8px">CSS framework</td><td style="padding:8px">MVPs, forms, grid layout</td></tr>
-          <tr><td style="padding:8px">Material UI</td><td style="padding:8px">Node.js</td><td style="padding:8px">React UI</td><td style="padding:8px">Interactive React demos</td></tr>
-          <tr><td style="padding:8px">Hugo</td><td style="padding:8px">Standalone</td><td style="padding:8px">SSG</td><td style="padding:8px">Fast static portfolio</td></tr>
-          <tr><td style="padding:8px">Jekyll</td><td style="padding:8px">Ruby</td><td style="padding:8px">SSG</td><td style="padding:8px">GitHub Pages, content sites</td></tr>
-          <tr><td style="padding:8px">GSAP</td><td style="padding:8px">No Node.js</td><td style="padding:8px">Animation</td><td style="padding:8px">Advanced animations</td></tr>
-          <tr><td style="padding:8px">Astro</td><td style="padding:8px">Node.js</td><td style="padding:8px">SSG / Framework</td><td style="padding:8px">Content-first + interactive islands</td></tr>
-          <tr><td style="padding:8px">Hygraph</td><td style="padding:8px">☁ SaaS</td><td style="padding:8px">Headless CMS</td><td style="padding:8px">Decoupled content management</td></tr>
-        </tbody>
-      </table>
+    <section id="notes" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Personal Notes — Quick Summary</h2>
+      <ul>
+        <li><strong>Prefer Node.js tools</strong> when building a component-driven React portfolio (MUI, Framer, shadcn) because they integrate with modern workflows.</li>
+        <li><strong>Prefer No-Node approaches</strong> for quick prototypes or when sharing simple demos (Bootstrap CDN, GSAP CDN).</li>
+        <li><strong>Standalone (Hugo)</strong> is my go-to when I want speed and minimal toolchain friction.</li>
+        <li><strong>SaaS</strong> (ImageKit, Hygraph) remove infra work but create external runtime/service dependencies.</li>
+      </ul>
     </section>
+
+    <section id="reflection" aria-labelledby="reflection-heading">
+      <h2 id="reflection-heading">Critical Reflection (ATELIER)</h2>
+      <article>
+        <h3>A — Which tools fit my workflow?</h3>
+        <p>I like a hybrid approach: Eleventy or Hugo for static content (fast builds), Tailwind + shadcn for consistent UI, and ImageKit for image delivery. For interactive micro-interactions I use GSAP when avoiding React, otherwise Framer Motion in React projects.</p>
+
+        <h3>T — Trade-offs observed</h3>
+        <ul>
+          <li><strong>Speed vs. Flexibility:</strong> Hugo + CDN CSS is fastest to iterate; Node.js + React gives more flexibility but slower initial setup and larger dependency surface.</li>
+          <li><strong>Dependencies vs. Simplicity:</strong> Node-based stacks offer modern features but require managing package.json, lockfiles, and local Node versions; standalone binaries or CDN-first approaches reduce that complexity.</li>
+          <li><strong>Node.js vs. Standalone:</strong> Node.js enables modern bundlers, hot reload, and component ecosystems. Standalone (Hugo) trades some ecosystem features for build speed and simplicity.</li>
+          <li><strong>Creativity vs. Convention:</strong> Libraries like MUI or Bootstrap provide conventions (fast to deliver) but can limit visual uniqueness unless heavily customized. Tailwind/shadcn encourages unique visual language at the cost of initial setup.</li>
+        </ul>
+
+        <h3>E — How would I use them in my portfolio?</h3>
+        <p>Primary portfolio (public): Hugo for fast builds + Tailwind for consistent styles + ImageKit for optimized images. For case-studies that need interactivity, create subprojects using React + shadcn + Framer Motion and deploy as separate apps or subpaths.</p>
+
+        <h3>L — Limitations & Lessons</h3>
+        <p>Tooling decisions are driven by maintenance and deployment targets: if I expect frequent content edits, use a SaaS headless CMS (Hygraph) or a lightweight CMS. If I need pixel-perfect components and animations, invest time in React-based setups.</p>
+
+        <h3>I — Implementation plan (mini)</h3>
+        <ol>
+          <li>Create a Hugo starter with Tailwind integrated (no Node for Hugo but Tailwind typically needs Node — weigh options: use precompiled CSS or add Node). </li>
+          <li>Use ImageKit for responsive images and Hygraph for content management if clients need editing capability.</li>
+          <li>For interactive case-studies, create a Next.js sub-app (Node required) with shadcn + Framer Motion.</li>
+        </ol>
+
+        <h3>R — Reflection summary</h3>
+        <p>Pragmatically, I will mix approaches: keep the main portfolio simple and fast (Hugo or Eleventy) while using Node.js-based subprojects when greater interactivity and component reuse are needed.</p>
+      </article>
+    </section>
+
+   
   </main>
-  <footer>
-    <p>Created as a student reference resource</p>
+
+  <footer class="site-footer container">
+    <p>Created by Julia Conti — exercise submission.</p>
   </footer>
 </body>
 </html>
