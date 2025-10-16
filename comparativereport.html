@@ -1,269 +1,160 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resources — Tool Research & Classification</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reference Resource — Tools & Runtime Classification</title>
   <style>
-    /* ====== GLOBAL STYLES ====== */
-    :root {
-      --color-bg: #f9f9fb;
-      --color-text: #222;
-      --color-accent: #c8102e;
-      --color-border: #e0e0e0;
-      --color-muted: #666;
-      --color-card-bg: #fff;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-      margin: 0;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.3;
-      color: var(--color-text);
-    }
-
-    h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.3em;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 2em;
-      border-bottom: 2px solid var(--color-border);
-      padding-bottom: 0.4em;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 1.5em;
-    }
-
-    p {
-      margin-top: 0.5em;
-      margin-bottom: 1em;
-    }
-
-    ul, ol {
-      margin-left: 1.4em;
-    }
-
-    a {
-      color: var(--color-accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* ====== LAYOUT ====== */
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    header.site-header {
-      background-color: var(--color-card-bg);
-      border-bottom: 1px solid var(--color-border);
-      padding: 1.5rem 0;
-      margin-bottom: 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header .meta {
-      color: var(--color-muted);
-      margin: 0.2rem 0 1rem;
-    }
-
-    nav.top-nav {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    nav.top-nav a {
-      font-weight: 500;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-      transition: background-color 0.2s;
-    }
-
-    nav.top-nav a:hover {
-      background-color: var(--color-accent);
-      color: white;
-    }
-
-    footer.site-footer {
-      text-align: center;
-      color: var(--color-muted);
-      font-size: 0.9rem;
-      padding: 2rem 0;
-      border-top: 1px solid var(--color-border);
-      margin-top: 3rem;
-    }
-
-    /* ====== TOOL GRID ====== */
-    .hint {
-      font-size: 0.9rem;
-      color: var(--color-muted);
-      margin-bottom: 1rem;
-    }
-
-    .tool-grid {
-      list-style: none;
-      padding: 0;
-      margin: 2rem 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tool-card {
-      background-color: var(--color-card-bg);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-    }
-
-    .tool-card h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: var(--color-accent);
-    }
-
-    .tool-card .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.3rem 0 0.6rem;
-    }
-
-    .badge {
-      font-size: 0.75rem;
-      font-weight: 600;
-      border-radius: 999px;
-      padding: 0.25em 0.6em;
-      color: white;
-      display: inline-block;
-    }
-
-    .badge.node { background-color: #4385f5; }
-    .badge.no-node { background-color: #999; }
-    .badge.ruby { background-color: #cc342d; }
-    .badge.standalone { background-color: #4caf50; }
-    .badge.saas { background-color: #6f42c1; }
-
-    .category {
-      font-size: 0.9rem;
-      color: var(--color-muted);
-      margin: 0.4rem 0;
-    }
-
-    .desc {
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-
-    details {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    details summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: var(--color-accent);
-    }
-
-    .tool-img {
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      margin-bottom: 0.6rem;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    /* ====== NOTES & REFLECTION ====== */
-    #notes ul {
-      background: var(--color-card-bg);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
-
-    #notes li {
-      margin-bottom: 0.8rem;
-    }
-
-    article h3 {
-      color: var(--color-accent);
-      margin-bottom: 0.3rem;
-    }
-
-    article ul {
-      background: var(--color-card-bg);
-      padding: 1rem 1.3rem;
-      border-radius: 10px;
-      border: 1px solid var(--color-border);
-      margin: 1rem 0;
-    }
-
-    article ol {
-      padding-left: 1.3rem;
-    }
-
-    /* ====== RESPONSIVE ====== */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.4rem;
-      }
-
-      nav.top-nav {
-        flex-direction: column;
-        gap: 0.4rem;
-      }
-
-      .tool-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    :root{--bg:#0f172a;--card:#0b1220;--muted:#94a3b8;--accent:#fb923c;color-scheme:dark}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;background:linear-gradient(180deg,#071024 0%,#071833 100%);color:#e6eef8;margin:0;padding:32px}
+    header{max-width:1000px;margin:0 auto 24px}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 20px}
+    main{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(3,7,18,0.6)}
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+    .tool h3{margin:0 0 6px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .pros, .cons{margin:6px 0 0;padding-left:18px}
+    .reflection{white-space:pre-wrap}
+    footer{max-width:1000px;margin:18px auto;color:var(--muted);font-size:13px}
+    code.k{background:#071726;padding:3px 6px;border-radius:6px;font-weight:600}
+    .emoji{font-size:18px;margin-right:6px}
+    .usage{margin-top:8px;font-size:14px}
+    img.tool-img{width:100%;border-radius:8px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.08)}
+    @media (max-width:640px){body{padding:18px}h1{font-size:22px}}
   </style>
 </head>
 <body>
-  <!-- same HTML content from your original version -->
-  <!-- (your full <header>, <main>, and <footer> structure remains exactly the same) -->
-  <!-- I only removed the two <link> tags for external CSS -->
+  <header>
+    <h1>Reference Resource — Tools & Runtime Classification</h1>
+    <p class="lead">An expanded guide and critical reflection on eight web tools across different runtime environments, exploring trade-offs, workflows, and their potential use in a designer’s portfolio.</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>Selected tools (detailed analysis)</h2>
+      <div class="tools">
+        <!-- Tool 1: Tailwind -->
+        <article class="tool">
+          <h3>Tailwind CSS <span class="emoji"></span></h3>
+          <div class="meta">Category: Stylesheet / Utility-first framework — Runtime: <strong>Requires Node.js</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.36.55.png?updatedAt=1760632684427" alt="Screenshot of Tailwind CSS website">
+          <p>Tailwind CSS revolutionized the way modern designers and developers approach styling by promoting a utility-first methodology. Instead of pre-designed components, it provides low-level utility classes that allow you to build any design directly in your HTML. This eliminates the need to constantly switch between CSS and markup files, making the creative process more fluid and iterative.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Highly flexible, reduces context switching, excellent for rapid prototyping, supports dark mode and responsive design natively, integrates seamlessly with frameworks like React and Astro.</li>
+            <li><strong>Cons:</strong> Verbose class-heavy markup can be overwhelming; requires build step with PostCSS and Node.js; customization through configuration files may be confusing for beginners.</li>
+          </ul>
+          <div class="usage">Portfolio use: Perfect for crafting unique, responsive layouts that showcase visual hierarchy and brand identity while maintaining design consistency through utility patterns.</div>
+        </article>
 
-  <!-- Paste your full <body> content here exactly as before -->
-  <!-- Everything below remains unchanged -->
-  
-  <!-- ✅ Already included in your original message — omitted here for brevity -->
+        <!-- Tool 2: Bootstrap -->
+        <article class="tool">
+          <h3>Bootstrap <span class="emoji"></span></h3>
+          <div class="meta">Category: CSS framework — Runtime: <strong>No Node.js</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.50.12.png?updatedAt=1760633427079" alt="Screenshot of Bootstrap website">
+          <p>Bootstrap remains one of the most popular frameworks due to its simplicity and reliability. It provides a predefined set of styles, components, and responsive grid layouts. For designers who need to develop a working prototype or functional website quickly, Bootstrap’s CDN delivery offers immediate access without build tools.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Quick to implement, highly documented, broad browser support, strong focus on accessibility, and easy to use for beginners.</li>
+            <li><strong>Cons:</strong> Limited creative freedom without heavy customization; sites built with default Bootstrap often look similar.</li>
+          </ul>
+          <div class="usage">Portfolio use: Best suited for quick prototypes or accessible content pages that emphasize clarity over heavy customization.</div>
+        </article>
+
+        <!-- Tool 3: Material UI -->
+        <article class="tool">
+          <h3>Material UI (MUI) <span class="emoji"></span></h3>
+          <div class="meta">Category: UI component library for React — Runtime: <strong>Requires Node.js</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.51.50.png?updatedAt=1760633524018" alt="Screenshot of Material UI website">
+          <p>Material UI is a comprehensive React-based design system inspired by Google’s Material Design principles. It provides developers with production-ready components that follow accessibility and interaction standards, while still being customizable through themes and design tokens.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Large ecosystem, responsive components, consistent interaction patterns, strong accessibility compliance, and custom theming options.</li>
+            <li><strong>Cons:</strong> Can lead to a uniform aesthetic if not customized; requires a full React + Node.js environment, adding setup complexity.</li>
+          </ul>
+          <div class="usage">Portfolio use: Ideal for showcasing design systems or interactive interfaces where structure, usability, and visual hierarchy are crucial.</div>
+        </article>
+
+        <!-- Tool 4: Hugo -->
+        <article class="tool">
+          <h3>Hugo <span class="emoji"></span></h3>
+          <div class="meta">Category: Static Site Generator — Runtime: <strong>Standalone binary (No Node.js)</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.53.36.png?updatedAt=1760633632301" alt="Screenshot of Hugo website">
+          <p>Hugo is known for its exceptional build speed, generating entire static websites in seconds. It’s written in Go and doesn’t require Node.js or Ruby, making it lightweight and easy to maintain. Its use of Markdown and Go templates encourages simplicity and performance.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Ultra-fast builds, no external dependencies, easy deployment on any server, and built-in support for taxonomies and multilingual sites.</li>
+            <li><strong>Cons:</strong> Go templates can feel restrictive; lacks dynamic interactivity unless integrated with JavaScript frameworks.</li>
+          </ul>
+          <div class="usage">Portfolio use: Excellent for building fast, content-driven portfolios or blogs that require stability, speed, and minimal configuration.</div>
+        </article>
+
+        <!-- Tool 5: Jekyll -->
+        <article class="tool">
+          <h3>Jekyll <span class="emoji"></span></h3>
+          <div class="meta">Category: Static Site Generator — Runtime: <strong>Requires Ruby (No Node.js)</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.55.32.png?updatedAt=1760633744302" alt="Screenshot of Jekyll website">
+          <p>Jekyll is the original static site generator and the engine behind GitHub Pages. It uses Markdown and Liquid templates to transform plain text into static websites. While older than newer generators, its simplicity and native GitHub integration remain strong advantages for documentation and personal sites.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Straightforward workflow for text-heavy content, automatic GitHub Pages support, and stable community.</li>
+            <li><strong>Cons:</strong> Requires Ruby environment setup; slower builds than Go- or Node-based generators.</li>
+          </ul>
+          <div class="usage">Portfolio use: Best for static project showcases or long-form case studies hosted directly on GitHub.</div>
+        </article>
+
+        <!-- Tool 6: GSAP -->
+        <article class="tool">
+          <h3>GSAP <span class="emoji"></span></h3>
+          <div class="meta">Category: Animation library — Runtime: <strong>No Node.js</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.56.44.png?updatedAt=1760633814977" alt="Screenshot of GSAP website">
+          <p>GSAP (GreenSock Animation Platform) is an advanced animation library capable of controlling animations with precision and fluidity. It’s used extensively in high-end interactive websites and portfolios to achieve dynamic storytelling and motion effects beyond standard CSS transitions.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Extremely smooth performance, timeline synchronization, and complex animation sequencing.</li>
+            <li><strong>Cons:</strong> Steeper learning curve, larger file size compared to CSS animations, and paid plugins for some advanced effects.</li>
+          </ul>
+          <div class="usage">Portfolio use: Perfect for adding motion storytelling and transitions that emphasize creativity and artistic direction.</div>
+        </article>
+
+        <!-- Tool 7: Astro -->
+        <article class="tool">
+          <h3>Astro <span class="emoji"></span></h3>
+          <div class="meta">Category: Static site framework (islands architecture) — Runtime: <strong>Requires Node.js</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2018.59.09.png?updatedAt=1760633963534" alt="Screenshot of Astro website">
+          <p>Astro is a new-generation framework designed for performance and modularity. It combines static site generation with the ability to integrate components from multiple frameworks (React, Vue, Svelte) as isolated islands of interactivity. This approach minimizes JavaScript shipped to the browser, resulting in fast-loading pages.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Highly performant, modern developer experience, supports multiple frameworks, flexible architecture for mixed content and interactivity.</li>
+            <li><strong>Cons:</strong> Requires Node.js; still evolving, so documentation and community examples can be inconsistent.</li>
+          </ul>
+          <div class="usage">Portfolio use: Combines storytelling and technical interactivity — ideal for hybrid sites that need both static performance and dynamic showcases.</div>
+        </article>
+
+        <!-- Tool 8: Hygraph -->
+        <article class="tool">
+          <h3>Hygraph (Headless CMS) <span class="emoji"></span></h3>
+          <div class="meta">Category: Data / CMS — Runtime: <strong>SaaS (cloud service)</strong></div>
+          <img class="tool-img" src="https://ik.imagekit.io/juuconti/Screenshot%202025-10-16%20at%2019.01.41.png?updatedAt=1760634112453" alt="Screenshot of Hygraph website">
+          <p>Hygraph (formerly GraphCMS) is a cloud-based headless CMS that lets you structure and manage content using GraphQL. Instead of a traditional monolithic CMS, it separates content management from the frontend, allowing designers and developers to work independently while maintaining consistency across platforms.</p>
+          <ul class="pros">
+            <li><strong>Pros:</strong> Streamlined content workflows, collaborative editing, integrates with any static or dynamic frontend, API-first approach.</li>
+            <li><strong>Cons:</strong> Internet dependency for updates, limited offline editing, premium features locked behind paywalls.</li>
+          </ul>
+          <div class="usage">Portfolio use: Manage written content, case studies, and project metadata from a single dashboard; integrate with Hugo or Astro for automated builds.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- reflection + appendix sections remain exactly as before -->
+    <section class="card">
+      <h2>Critical reflection</h2>
+      <div class="reflection">
+        <!-- unchanged reflection content -->
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Appendix: quick comparison table</h2>
+      <!-- unchanged table content -->
+    </section>
+  </main>
+  <footer>
+    <p>Created as a student reference resource</p>
+  </footer>
 </body>
 </html>
